@@ -3,7 +3,7 @@ require 'test_helper'
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   def setup
-    @base_title = "mell.one"
+    @base_title = "talkab.it"
   end
 
   test "should get root" do
@@ -14,7 +14,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get home" do
     get static_pages_home_url
     assert_response :success
-    assert_select "title", "Home | #{@base_title}"
+    assert_select "title", "#{@base_title}"
   end
 
   test "should get about" do

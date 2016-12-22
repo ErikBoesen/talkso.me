@@ -13,3 +13,66 @@
  *= require_tree .
  *= require_self
  */
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+nav li {
+    display: inline-block;
+    list-style: none;
+}
+nav a {
+    padding: 7px 10px;
+    text-decoration: none;
+}
+nav a:hover {
+    background: #eee;
+}
+h3 {
+    /* TODO: Make this widely compatible */
+    font-family: "FabfeltScript", 'Nunito Sans', Helvetica, sans-serif;
+    font-size: 2em;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+.btn {
+    border: solid 2px #333;
+    padding: 7px 10px;
+    text-decoration: none;
+    /* Fix iffy rendering on FF */
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    transition: color 0.3s;
+}
+.btn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #333;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.3s ease-out;
+}
+.btn:hover,
+.btn:focus,
+.btn:active {
+    color: white;
+}
+.btn:hover:before,
+.btn:focus:before,
+.btn:active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+.jumbotron div a:last-of-type {
+    padding: 7px 10px;
+    text-decoration: none;
+}
