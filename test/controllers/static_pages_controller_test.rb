@@ -3,7 +3,7 @@ require 'test_helper'
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   def setup
-    @base_title = "talkab.it"
+    @base_title = "talkso.me"
   end
 
   test "should get root" do
