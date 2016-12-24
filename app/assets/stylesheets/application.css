@@ -33,46 +33,73 @@ nav a:hover {
     background: #eee;
 }
 h3 {
-    /* TODO: Make this widely compatible */
-    font-family: "FabfeltScript", 'Nunito Sans', Helvetica, sans-serif;
+    font-family: 'FabfeltScript', 'Nunito Sans', Helvetica, sans-serif;
     font-size: 2em;
     letter-spacing: 2px;
     margin-bottom: 30px;
 }
 .btn {
     border: solid 2px #333;
+    background: #333;
+    color: white;
     padding: 7px 10px;
     text-decoration: none;
-    /* Fix iffy rendering on FF */
-    box-shadow: 0 0 1px transparent;
-    position: relative;
-    transition: color 0.3s;
+    transition: .2s;
+    cursor: pointer;
 }
-.btn:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #333;
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    transition: transform 0.3s ease-out;
-}
-.btn:hover,
-.btn:focus,
-.btn:active {
-    color: white;
-}
-.btn:hover:before,
-.btn:focus:before,
-.btn:active:before {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
+.btn:hover {
+    background: transparent;
+    color: #333;
+    transition: .3s;
 }
 .jumbotron div a:last-of-type {
     padding: 7px 10px;
     text-decoration: none;
+}
+article {
+    padding: 100px;
+}
+h1 {
+    font-size: 50px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+form {}
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    border: solid 1px #999;
+    padding: 5px;
+    margin-bottom: 10px;
+    font: inherit;
+    border-radius: 5px;
+    transition: .3s;
+}
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #000;
+    transition: .3s;
+}
+input[data-disable-with="Join"] {
+    background: grey;
+}
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #999;
+}
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #999;
+    opacity: 1;
+}
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #999;
+    opacity: 1;
+}
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #999;
 }

@@ -1,2 +1,17 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, 'Sign up') %>
+
+<h1>Sign up</h1>
+
+<%= form_for(@user, url: su_path) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+
+    <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
+
+    <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+
+    <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm password' %>
+
+    <%= f.submit "Join", class: "btn" %>
+<% end %>

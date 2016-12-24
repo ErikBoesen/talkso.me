@@ -58,6 +58,13 @@ div {
         margin-bottom: 10px;
     }
 }
+.alert {
+    margin-top: 100px;
+    margin-left: 100px;
+}
+.alert + article {
+    margin-top: 0;
+}
 #notice {
     color: green;
 }
@@ -66,22 +73,14 @@ div {
     background-color: red;
     display: table;
 }
-#error_explanation {
+#error-explanation {
     width: 450px;
     border: 2px solid red;
-    padding: 7px 7px 0;
+    padding: 7px;
     margin-bottom: 20px;
-    background-color: #f0f0f0;
-    h2 {
-        text-align: left;
-        font-weight: bold;
-        padding: 5px 5px 5px 15px;
-        font-size: 12px;
-        margin: -7px -7px 0;
-        background-color: #c00;
-        color: #fff;
-    }
-    ul li {
+    background-color: #ffa7a7;
+    border-radius: 8px;
+    li {
         font-size: 12px;
         list-style: square;
     }

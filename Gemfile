@@ -20,17 +20,13 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'bcrypt', '~> 3.1.7'
 
 gem 'listen', '~> 3.0.5'
 
 group :development, :test do
+    # Use sqllite for databasing
     gem 'sqlite3'
     # Call 'byebug' anywhere in the code to stop execution and get a debugger console
     gem 'byebug', platform: :mri
@@ -45,6 +41,7 @@ gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :production do
+    # Use Postgres for databasing in production
     gem 'pg'
 end
 
