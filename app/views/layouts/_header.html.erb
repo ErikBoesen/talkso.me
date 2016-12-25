@@ -1,9 +1,19 @@
 <header>
+    <div id="nav-button"><span></span><span></span><span></span></div>
     <nav>
         <ul>
-            <li><%= link_to "Home",   '#' %></li>
-            <li><%= link_to "Help",   '#' %></li>
-            <li><%= link_to "Log in", '#' %></li>
+            <% if logged_in? %>
+                <li><%= link_to "Users", '#' %></li>
+                <li><%= link_to "Account", '' %>
+                    <ul>
+                        <li><%= link_to "Profile", current_user %></li>
+                        <li><%= link_to "Settings", '#' %></li>
+                        <li><%= link_to "Log out", lo_path, method: "delete" %></li>
+                    </ul>
+                </li>
+            <% else %>
+                <li><%= link_to "Log in", li_path %></li>
+            <% end %>
         </ul>
     </nav>
 </header>

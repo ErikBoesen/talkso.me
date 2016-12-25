@@ -1,8 +1,10 @@
+<% provide(:pagetype, 'splash') %>
+
 <div class="jumbotron">
     <%= image_tag("logo.png", alt: "talkso.me") %>
-    <h3>Restriction breeds creativity.</h3>
+    <h3>Pop the bubble</h3>
     <div>
-        <a class="btn" href="su">Sign Up</a>
-        <a href="login">Log in</a>
+        <%= link_to "Sign Up", 'su', class: 'btn' %>
+        <%= link_to "Log In", 'li' %>
     </div>
 </div>

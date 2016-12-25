@@ -24,66 +24,37 @@ body {
     font-size: 13px;
     line-height: 18px;
 }
-ol,
-p,
-td,
-ul {
-    font-family: 'Nunito Sans', Helvetica, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
-    margin: 33px;
-}
-pre {
-    background-color: #eee;
-    padding: 10px;
-    font-size: 11px;
-}
 a {
     color: inherit;
     &:hover {
         text-decoration: none;
     }
 }
-th {
-    padding-bottom: 5px;
-}
-td {
-    padding-bottom: 7px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-div {
-    &.actions,
-    &.field {
-        margin-bottom: 10px;
-    }
-}
 .alert {
-    margin-top: 100px;
-    margin-left: 100px;
+    margin: 10px 0 20px;
+    padding: 20px;
 }
-.alert + article {
-    margin-top: 0;
+.alert p {
+    margin: 10px;
 }
-#notice {
-    color: green;
+.alert-success {
+    border: solid 1px #29cf5d;
+    background: #bdffc1;
+    color: #398a48;
 }
-.field_with_errors {
-    padding: 2px;
-    background-color: red;
-    display: table;
-}
-#error-explanation {
-    width: 450px;
+.alert-danger {
     border: 2px solid red;
     padding: 7px;
     margin-bottom: 20px;
-    background-color: #ffa7a7;
-    border-radius: 8px;
-    li {
-        font-size: 12px;
-        list-style: square;
-    }
+    background: #ffa7a7;
+    color: #b91b1b;
+}
+.alert-danger ul {
+    margin: 0 0 10px 30px;
+}
+.field_with_errors input {
+    border-color: red;
+    background: #ffc6c6;
 }
 label {
     display: block;
@@ -100,4 +71,5 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
+    padding: 20px;
 }

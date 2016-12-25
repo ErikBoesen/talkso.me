@@ -9,7 +9,7 @@
     <%= render 'layouts/shim' %>
 </head>
 
-<body>
+<body class="<%= yield(:pagetype) %>">
     <%= render 'layouts/header' %>
     <article>
         <% flash.each do |message_type, message| %>

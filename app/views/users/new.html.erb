@@ -1,4 +1,5 @@
 <% provide(:title, 'Sign up') %>
+<% provide(:pagetype, 'form') %>
 
 <h1>Sign up</h1>
 
@@ -15,3 +16,5 @@
 
     <%= f.submit "Join", class: "btn" %>
 <% end %>
+
+<p>Returning user? <%= link_to "Log in", li_path %></p>
