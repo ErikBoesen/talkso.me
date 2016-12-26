@@ -18,8 +18,10 @@ body.splash article {
     padding: 0;
 }
 body.form {
-    background-image: url(<%= asset_path 'assets/bg/1.jpg' %>);
+    background-image: url(<%= asset_path "assets/bg/#{rand(2)+1}.jpg" %>);
     background-size: 100%;
+    background-position: center;
+    background-color: #333;
     color: white;
 }
 body.form .btn {
@@ -42,6 +44,7 @@ nav {
     margin: 0;
     right: -120vw;
     background: #333;
+    color: white;
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -206,7 +209,6 @@ input[type="email"],
 input[type="text"],
 input[type="password"] {
     background: rgba(255, 255, 255, 0.5);
-    ;
     border: none;
     border-left: solid 3px white;
     padding: 5px;
@@ -219,6 +221,9 @@ input[type="text"]:focus,
 input[type="password"]:focus {
     outline: none;
     transition: .3s;
+}
+label * {
+    display: inline-block;
 }
 ::-webkit-input-placeholder {
     /* Webkit + derivatives */
