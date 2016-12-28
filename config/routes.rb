@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
     root 'static_pages#home'
     get 'abt'               => 'static_pages#about'
     get 'nr'                => 'static_pages#newsroom'
@@ -14,4 +12,5 @@ Rails.application.routes.draw do
     get ':username/edit'    => 'users#edit'
     resources :users
     resources :account_activations, only: [:edit]
+    resources :password_resets,     only: [:new, :create, :edit, :update]
 end
