@@ -6,15 +6,16 @@
                 <li><%= link_to "Users", '#' %></li>
                 <li><%= link_to "Account", '' %>
                     <ul>
-                        <li><%= link_to "Profile", current_user %></li>
-                        <li><%= link_to "Settings", '#' %></li>
+                        <li><%= link_to "Profile", current_user.username %></li>
+                        <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                         <li><%= link_to "Log out", lo_path, method: "delete" %></li>
                     </ul>
                 </li>
             <% else %>
                 <li><%= link_to "Sign Up", su_path %></li>
                 <li><%= link_to "Log in", li_path %></li>
-                <li><%= link_to "Newsroom", nr_path %></li>
+                <li><%= link_to "About", abt_path %></li>
+                <li><%= link_to "Contact", c_path %></li>
             <% end %>
         </ul>
     </nav>

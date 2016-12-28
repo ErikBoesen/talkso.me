@@ -1,0 +1,25 @@
+<% provide(:title, "Edit Profile") %>
+<% provide(:colorscheme, 'light') %>
+
+<h1>Edit profile</h1>
+
+<%= form_for(@user) do |f| %>
+     <%= render 'shared/error_messages' %>
+
+     <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+
+     <!--<%= f.text_field :username, class: 'form-control', placeholder: 'Username' %>-->
+
+     <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
+
+     <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+
+     <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm password' %>
+
+     <%= f.submit "Save changes", class: "btn" %>
+   <% end %>
+
+<div class="gravatar_edit">
+    <%= gravatar_for @user %>
+    <a href="http://gravatar.com/emails" target="_blank" rel="noopener">change</a>
+</div>

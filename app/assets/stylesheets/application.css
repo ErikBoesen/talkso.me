@@ -18,10 +18,10 @@ body.splash article {
     padding: 0;
 }
 body.form {
-    background-image: url(<%= asset_path "assets/bg/#{rand(2)+1}.jpg" %>);
-    background-size: 100%;
-    background-position: center;
+    background-size: cover;
+    background-position: left;
     background-color: #333;
+    background-repeat: no-repeat;
     color: white;
 }
 body.form .btn {
@@ -32,6 +32,24 @@ body.form .btn {
 body.form .btn:hover {
     background: transparent;
     color: white;
+}
+body.light {
+    background-color: white;
+    color: #333;
+}
+body.light input[type="email"],
+body.light input[type="text"],
+body.light input[type="password"] {
+    border-left-color: #333;
+    color: #333;
+    background-color: rgba(51, 51, 51, 0.05)
+}
+body.column article {
+    max-width: 8in;
+    margin: 0 auto;
+}
+body.column p {
+    margin-bottom: 30px;
 }
 h3 {
     font-family: 'FabfeltScript', 'Nunito Sans', Helvetica, sans-serif;
@@ -69,6 +87,8 @@ nav li {
     display: block;
     clear: both;
     line-height: 1;
+    border-left: solid 4px white;
+    padding-left: 20px;
 }
 nav li:last-of-type {
     margin-bottom: 15px;
@@ -80,7 +100,6 @@ nav ul ul {
 nav ul ul li {
     margin-left: 20px;
     padding-left: 10px;
-    border-left: solid 4px white;
 }
 nav li:hover {
     background: #333;
@@ -209,6 +228,7 @@ input[type="email"],
 input[type="text"],
 input[type="password"] {
     background: rgba(255, 255, 255, 0.5);
+    color: white;
     border: none;
     border-left: solid 3px white;
     padding: 5px;
@@ -222,24 +242,68 @@ input[type="password"]:focus {
     outline: none;
     transition: .3s;
 }
-label * {
-    display: inline-block;
+.field_with_errors input {
+    border-left-color: #ff3030;
 }
+label {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 7px;
+}
+label input {
+    width: 15%;
+}
+label f {
+    width: 80%;
+    margin-top: -2px;
+}
+/* Memo to browser developers: for the love of god, implement unrecognized selector portion tolerance */
 ::-webkit-input-placeholder {
     /* Webkit + derivatives */
     color: white;
+    opacity: 0.7;
 }
 :-moz-placeholder {
     /* FF 4-18 */
     color: white;
-    opacity: 1;
+    opacity: 0.7;
 }
 ::-moz-placeholder {
     /* FF 19+ */
     color: white;
-    opacity: 1;
+    opacity: 0.7;
 }
 :-ms-input-placeholder {
     /* IE 10-11 */
     color: white;
+    opacity: 0.7;
+}
+/* Placeholder text on light colored pages */
+body.light ::-webkit-input-placeholder {
+    /* Webkit + derivatives */
+    color: #666;
+    opacity: 0.7;
+}
+body.light :-moz-placeholder {
+    /* FF 4-18 */
+    color: #666;
+    opacity: 0.7;
+}
+body.light ::-moz-placeholder {
+    /* FF 19+ */
+    color: #666;
+    opacity: 0.7;
+}
+body.light :-ms-input-placeholder {
+    /* IE 10-11 */
+    color: #666;
+    opacity: 0.7;
+}
+input[type="image"] {
+    width: auto;
+}
+@media (max-width: 600px) {
+    article {
+        padding: 20px;
+    }
 }

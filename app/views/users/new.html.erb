@@ -1,5 +1,6 @@
 <% provide(:title, 'Sign up') %>
 <% provide(:pagetype, 'form') %>
+<% provide(:backgroundimage, '1') %>
 
 <h1>Sign up</h1>
 
@@ -7,6 +8,8 @@
     <%= render 'shared/error_messages' %>
 
     <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+
+    <%= f.text_field :username, class: 'form-control', placeholder: 'Username' %>
 
     <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
 

@@ -17,12 +17,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+html,
+body {
+    height: 100%;
+}
 body {
     background-color: #fff;
     color: #333;
     font-family: 'Nunito Sans', Helvetica, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 16px;
+    line-height: 1.5;
 }
 a {
     color: inherit;
@@ -33,6 +37,9 @@ a {
 .alert {
     margin: 10px 0 20px;
     padding: 20px;
+    position: absolute;
+    left: 100px;
+    top: 20px;
 }
 .alert p {
     margin: 10px;
@@ -41,6 +48,7 @@ a {
     border: solid 1px #29cf5d;
     background: #bdffc1;
     color: #398a48;
+    width: calc(100vh - 200px);
 }
 .alert-danger {
     border: 2px solid red;
@@ -52,10 +60,7 @@ a {
 .alert-danger ul {
     margin: 0 0 10px 30px;
 }
-.field_with_errors input {
-    border-color: red;
-    background: #ffc6c6;
-}
+
 label {
     display: block;
 }
@@ -67,8 +72,6 @@ label {
     height: 100vh;
 }
 footer {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     text-align: center;
     padding: 20px;
