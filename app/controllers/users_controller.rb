@@ -8,10 +8,9 @@ class UsersController < ApplicationController
     end
 
     def show
-        # FIXME: Should work with the commented-out line rather than the one after.
-        # This is part of the reason why username changing is broken.
-        #@user = User.find(params[:username])
-        @user = User.find(current_user.username)
+        @user = User.find(params[:username])
+        redirect_to root_url and return unless @user.activated?
+        @posts = @user.posts.paginate(page: params[:page])
     end
 
     def new
@@ -47,21 +46,9 @@ class UsersController < ApplicationController
             params.require(:user).permit(:name, :username, :email, :password, :password_confirmation)
         end
 
-        # Before filters
-
-        # Confirms a logged-in user.
-        def logged_in_user
-            unless logged_in?
-                store_location
-                flash[:danger] = "Please log in."
-                redirect_to li_url
-            end
-        end
-
         # Confirms the correct user.
         def correct_user
-            #@user = User.find(params[:username])
-            @user = User.find(current_user.username)
+            @user = User.find(params[:username])
             redirect_to(root_url) unless current_user?(@user)
         end
 end

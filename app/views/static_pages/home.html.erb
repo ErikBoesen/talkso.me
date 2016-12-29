@@ -1,10 +1,22 @@
-<% provide(:pagetype, 'splash') %>
+<% if logged_in? %>
+    <section class="post-form">
+        <%= render 'shared/post_form' %>
+    </section>
+    <% if @feed_items.any? %>
+        <ol class="feed">
+            <%= render @feed_items %>
+        </il>
+        <%= will_paginate @feed_items %>
+    <% end %>
+<% else %>
+    <% provide(:pagetype, 'splash') %>
 
-<div class="jumbotron">
-    <%= image_tag("logo.png", alt: "talksome logo") %>
-    <h3>This website is incomplete, don't use it yet</h3>
-    <div>
-        <%= link_to "Sign Up", 'su', class: 'btn' %>
-        <%= link_to "Log In", 'li' %>
+    <div class="jumbotron">
+        <%= image_tag("logo.png", alt: "talksome logo") %>
+        <h3>This website is incomplete, don't use it yet</h3>
+        <div>
+            <%= link_to "Sign Up", 'su', class: 'btn' %>
+            <%= link_to "Log In", 'li' %>
+        </div>
     </div>
-</div>
+<% end %>

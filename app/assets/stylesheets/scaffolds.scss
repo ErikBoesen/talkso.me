@@ -1,11 +1,4 @@
 @font-face {
-    font-family: 'FabfeltScript';
-    font-style: normal;
-    font-weight: 400;
-    src: local('FabfeltScript'), url('fabfeltscript-bold.ttf') format('truetype');
-    unicode-range: U+0000-00FF;
-}
-@font-face {
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
@@ -48,7 +41,7 @@ a {
     border: solid 1px #29cf5d;
     background: #bdffc1;
     color: #398a48;
-    width: calc(100vh - 200px);
+    width: calc(100vw - 200px);
 }
 .alert-danger {
     border: 2px solid red;

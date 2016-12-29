@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-    attr_accessor :remember_token, :activation_token, :reset_token
+    has_many :posts, dependent: :destroy
 
+    attr_accessor :remember_token, :activation_token, :reset_token
 
     self.primary_key = 'username'
 
@@ -22,7 +23,7 @@ class User < ApplicationRecord
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
     # Returns the hash digest of the given string.
-    def User.digest(string)
+    def self.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                       BCrypt::Engine.cost
         BCrypt::Password.create(string, cost: cost)
@@ -36,7 +37,7 @@ class User < ApplicationRecord
     end
 
     # Returns a random token.
-        def self.new_token
+    def self.new_token
         SecureRandom.urlsafe_base64
     end
 
@@ -85,6 +86,11 @@ class User < ApplicationRecord
     def password_reset_expired?
         reset_sent_at < 2.hours.ago
     end
+
+    def feed
+        Post.where("user_id = ?", id)
+    end
+
 
     private
 
