@@ -20,7 +20,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   end
 
   test "valid signup information with account activation" do
-    get signup_path
+    get su_path
     assert_difference 'User.count', 1 do
       post users_path, params: { user: { name:  "Example User",
                                          email: "user@example.com",

@@ -9,7 +9,7 @@
     <%= render 'layouts/shim' %>
 </head>
 
-<body class="<%= yield(:pagetype) + ' ' + yield(:colorscheme) %>" <% if yield(:backgroundimage) %>style="background-image: url(<%= asset_path "assets/bg/#{yield(:backgroundimage)}.jpg" %>);" <% end %>>
+<body class="<%= yield(:pagetype) + ' ' + yield(:colorscheme) %>" style="<% if yield(:backgroundimage).length > 0 %>background-image: url(<%= asset_path "assets/bg/#{yield(:backgroundimage)}.jpg" %>);<% end %>">
     <%= render 'layouts/header' %>
     <article>
         <% flash.each do |message_type, message| %>
