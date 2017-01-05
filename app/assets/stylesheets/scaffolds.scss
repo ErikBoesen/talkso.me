@@ -82,7 +82,31 @@ input {
 .new_post {
     margin: 30px 0;
     width: 5in;
+    .bubble-arrow {
+        width: 10px;
+        height: 10px;
+        background: white;
+        margin-left: 35px;
+        border: solid 1px #ddd;
+        transform: rotate(45deg);
+        margin-bottom: -5px;
+        z-index: -10;
+        position: relative;
+    }
+    .bubble-shadow {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background: white;
+        margin-left: 36px;
+        transform: rotate(45deg);
+        margin-bottom: -10px;
+        top: -4px;
+        z-index: 12;
+        position: relative;
+    }
     textarea {
+        z-index: 10;
         border: solid 1px #ddd;
         font: inherit;
         // Correct for automatic margin below textarea, which varies by browser
@@ -94,6 +118,22 @@ input {
         outline: 0;
         margin: 0;
         border-bottom: none;
+
+
+        &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color: #ccc;
+        }
+        &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+           color: #ccc;
+           opacity:  1;
+        }
+        &::-moz-placeholder { /* Mozilla Firefox 19+ */
+           color: #ccc;
+           opacity:  1;
+        }
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+           color: #ccc;
+        }
     }
     .btn {
         margin-right: -4px;
@@ -120,20 +160,7 @@ input {
         background-color: #22d534;
     }
 
-    textarea::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-        color: #ccc;
-    }
-    textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-       color: #ccc;
-       opacity:  1;
-    }
-    textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
-       color: #ccc;
-       opacity:  1;
-    }
-    textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
-       color: #ccc;
-    }
+
 }
 
 .user-info {

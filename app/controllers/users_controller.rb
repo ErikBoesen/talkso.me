@@ -9,8 +9,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @post = current_user.posts.build
     @user = User.find(params[:username])
+    @post = @user.posts.build
     redirect_to root_url and return unless @user.activated?
     @posts = @user.posts.paginate(page: params[:page])
   end
@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     if @user.save
       @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
+      redirect_to li_path
     else
       render 'new'
     end
@@ -47,7 +48,7 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:username]).destroy
     flash[:success] = "User deleted"
-    redirect_to users_url
+    redirect_to root_url
   end
 
   def following
