@@ -1,12 +1,15 @@
 <% provide(:title, @user.name) %>
 <section class="user-info">
     <%= gravatar_for @user %>
-    <h1><%= @user.name %></h1>
-    <h2><%= @user.username %></h2>
+    <div class="names">
+        <h1><%= @user.name %></h1>
+        <h2>@<%= @user.username %></h2>
+    </div>
+    <%= render 'shared/stats' %>
 </section>
+<%= render 'shared/post_form' %>
 <section>
     <% if @user.posts.any? %>
-        <h3>Posts (<%= @user.posts.count %>)</h3>
         <ol class="posts">
             <%= render @posts %>
         </ol>

@@ -1,6 +1,5 @@
 <% if logged_in? %>
-    <%= render 'shared/user_info' %>
-    <%= render 'shared/stats' %>
+    <%= image_tag("logo-small.png", alt: "talksome logo", class: 'logo-icon') %>
     <%= render 'shared/post_form' %>
     <h3>Post Feed</h3>
     <%= render 'shared/feed' %>
