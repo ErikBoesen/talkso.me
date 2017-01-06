@@ -7,8 +7,8 @@
     <% provide(:pagetype, 'splash') %>
 
     <div class="jumbotron">
-        <%= image_tag("logo.png", alt: "talksome logo") %>
-        <h3>This website is incomplete, don't use it yet</h3>
+        <%= image_tag("logo.png", alt: "Talksome logo", title: "Please excuse bugs; we're currently in beta!") %>
+        <h3><%= link_to "Connect. Together.", abt_path %></h3>
         <div>
             <%= link_to "Sign Up", su_path, class: 'btn' %>
             <%= link_to "Log In", li_path %>

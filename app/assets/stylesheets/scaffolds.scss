@@ -32,7 +32,7 @@ a {
     padding: 20px;
     position: absolute;
     left: 100px;
-    top: 20px;
+    top: 10px;
 }
 .alert p {
     margin: 10px;
@@ -41,7 +41,7 @@ a {
     border: solid 1px #29cf5d;
     background: #bdffc1;
     color: #398a48;
-    width: calc(100vh - 200px);
+    width: 5in;
 }
 .alert-info {
     border: solid 1px #2989cf;
@@ -187,6 +187,19 @@ input {
     h1 {
         margin: 0;
     }
+    .follow-form {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    .btn.unfollow {
+        color: white;
+        background-color: #1268b6;
+        border-color: #1268b6;
+    }
+    .btn.unfollow:hover {
+        color: #1268b6;
+        background-color: transparent;
+    }
 }
 
 .posts {
@@ -195,6 +208,7 @@ input {
     li {
         border-top: solid 1px #ddd;
         padding-top: 20px;
+        max-width: 5in;
     }
     .user {
         > * {
@@ -210,6 +224,16 @@ input {
         div * {
             display: block;
             margin-left: 5px;
+        }
+        div span {
+            display: inline;
+            color: #666;
+        }
+        .icon-clock {
+            margin-left: 2px;
+        }
+        .timestamp {
+            margin-left: -2px;
         }
     }
     .content {

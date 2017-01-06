@@ -11,7 +11,11 @@ module ApplicationHelper
   end
 
   def user_path(user)
-    user.username
+    "/#{user.username}"
+  end
+
+  def edit_user_path(user)
+    "/#{user.username}/edit"
   end
 
   # Returns the Gravatar for the given user.

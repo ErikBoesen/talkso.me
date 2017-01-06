@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20161229160612) do
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"
-    t.string   "user_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "picture"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20161229160612) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
-  create_table "users", id: false, force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "username",                          null: false
     t.string   "name"
     t.string   "email"

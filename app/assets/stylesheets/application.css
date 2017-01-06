@@ -17,6 +17,9 @@
 body.splash article {
     padding: 0;
 }
+body.splash h3 a {
+    text-decoration: none;
+}
 body.form {
     background-size: cover;
     background-position: left;

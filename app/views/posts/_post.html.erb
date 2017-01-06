@@ -4,10 +4,8 @@
         <div>
             <%= link_to post.user.name, post.user %>
             <%= link_to '@' + post.user.username, post.user %>
-            <div>
             <span class="icon-clock"></span>
-            <span class="timestamp"><%= time_ago_in_words(post.created_at) %></span>
-        </div>
+            <span class="timestamp"><%= time_ago_in_words(post.created_at).gsub('about ','') %></span>
         </div>
     </span>
 

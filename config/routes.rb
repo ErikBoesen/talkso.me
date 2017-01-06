@@ -2,7 +2,7 @@ Rails.application.routes.draw do
     root 'static_pages#home'
     get 'abt'               => 'static_pages#about'
     get 'nr'                => 'static_pages#newsroom'
-    get 'c'                 => 'static_pages#contact'
+    get 'h'                 => 'static_pages#help'
     get 'su'                => 'users#new'
     post 'su'               => 'users#create'
     get 'li'                => 'sessions#new'
@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     delete 'lo'             => 'sessions#destroy'
     get ':username'         => 'users#show' # Handle anything else (assume it's a user's profile)
     get ':username/edit'    => 'users#edit'
+    patch ':username'       => 'users#update'
     resources :users do
         member do
             get :following, :followers

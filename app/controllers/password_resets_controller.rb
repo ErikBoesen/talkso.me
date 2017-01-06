@@ -30,7 +30,7 @@ class PasswordResetsController < ApplicationController
       log_in @user
       flash[:success] = "Password has been reset."
       # TODO: Make @user redirect to the right place
-      redirect_to @user.username
+      redirect_to '/' + @user.username
     else
       render 'edit'                                     # Case (2)
     end
@@ -51,7 +51,7 @@ class PasswordResetsController < ApplicationController
     # Confirms a valid user.
     def valid_user
       unless (@user && @user.activated? &&
-              @user.authenticated?(:reset, params[:username]))
+              @user.authenticated?(:reset, params[:id]))
         redirect_to root_url
       end
     end

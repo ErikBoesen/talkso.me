@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:username])
+    @user = User.find_by(username: params[:username])
     @post = @user.posts.build
     redirect_to root_url and return unless @user.activated?
     @posts = @user.posts.paginate(page: params[:page])
@@ -31,36 +31,36 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:username])
+    @user = User.find_by(username: params[:username])
   end
 
   def update
-    @user = User.find(params[:username])
+    @user = User.find(current_user.id)
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "Profile updated."
       # TODO: Make @user redirect to the right place
-      redirect_to @user.username
+      redirect_back_or @user.username
     else
       render 'edit'
     end
   end
 
   def destroy
-    User.find(params[:username]).destroy
+    User.find(current_user.id).destroy
     flash[:success] = "User deleted"
     redirect_to root_url
   end
 
   def following
     @title = "Following"
-    @user  = User.find(params[:username])
+    @user  = User.find(current_user.id)
     @users = @user.following.paginate(page: params[:page])
     render 'show_follow'
   end
 
   def followers
     @title = "Followers"
-    @user  = User.find(params[:username])
+    @user  = User.find(current_user.id)
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
@@ -76,7 +76,7 @@ class UsersController < ApplicationController
 
     # Confirms the correct user.
     def correct_user
-      @user = User.find(params[:username])
+      @user = User.find_by(username: params[:username])
       redirect_to(root_url) unless current_user?(@user)
     end
 
