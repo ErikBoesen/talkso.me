@@ -6,3 +6,5 @@
 * Reposts
 * Highlighting links
 * Mentions
+* Custom error pages
+* Infinite post scroll

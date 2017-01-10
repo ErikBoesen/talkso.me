@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated."
       # TODO: Make @user redirect to the right place
-      redirect_back_or @user.username
+      redirect_to '/' + @user.username
     else
       render 'edit'
     end
