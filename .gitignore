@@ -27,3 +27,5 @@
 /public/uploads
 
 .DS_Store
+
+app/assets/images/uploads/*

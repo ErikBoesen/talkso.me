@@ -1,10 +1,6 @@
-# Talksomelication
+# Talksome
 
-This is the reference implementation of the sample application for the 4th edition of [*Ruby on Rails Tutorial: Learn Web Development with Rails*](http://www.railstutorial.org/) by [Michael Hartl](http://www.michaelhartl.com/).
-
-## License
-
-All source code in the [Ruby on Rails Tutorial](http://railstutorial.org/) is available jointly under the MIT License and the Beerware License. See [LICENSE.md](LICENSE.md) for details.
+This is the code for a social network that fights filter bubbles.
 
 ## Getting started
 
@@ -12,8 +8,8 @@ To get started with the app, clone the repo and then install the needed gems:
 
 ```
 $ cd ~/tmp
-$ git clone https://bitbucket.org/railstutorial/sample_app_4th_ed.git sample_app
-$ cd sample_app
+$ git clone https://github.com/Talksome/talkso.me.git
+$ cd talkso.me
 $ bundle install --without production
 ```
 
@@ -35,27 +31,6 @@ If the test suite passes, you'll be ready to run the app in a local server:
 $ rails server
 ```
 
-On Cloud9, this command should be
+## License
 
-```
-$ rails server -b $IP -p $PORT
-```
-
-instead.
-
-To check out the code for a particular chapter, use
-
-```
-$ git checkout chapter-branch-name
-```
-
-where you can find the branch name using
-
-```
-$ git branch -a
-```
-
-A branch called `remotes/orgin/foo-bar` can be checked out using `git checkout foo-bar`.
-
-For more information, see the
-[*Ruby on Rails Tutorial* book](http://www.railstutorial.org/book).
+This code is available under the MIT License. See `LICENSE` for more information.
