@@ -2,12 +2,8 @@
     <div id="nav-button"><span></span><span></span><span></span></div>
     <nav>
         <ul>
-            <li><%= link_to "Home", root_url %></li>
             <% if logged_in? %>
-<<<<<<< HEAD
                 <li><%= link_to "Feed", root_url %></li>
-=======
->>>>>>> 7709415ba3b5dadd163fcead37fdff350da8bd8f
                 <li><%= link_to "Account", '' %>
                     <ul>
                         <li><%= link_to "Profile", current_user.username %></li>
