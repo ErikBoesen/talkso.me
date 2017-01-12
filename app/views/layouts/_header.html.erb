@@ -2,8 +2,8 @@
     <div id="nav-button"><span></span><span></span><span></span></div>
     <nav>
         <ul>
-            <li><%= link_to "Home", root_url %></li>
             <% if logged_in? %>
+                <li><%= link_to "Feed", root_url %></li>
                 <li><%= link_to "Account", '' %>
                     <ul>
                         <li><%= link_to "Profile", current_user.username %></li>
@@ -12,6 +12,7 @@
                     </ul>
                 </li>
             <% else %>
+                <li><%= link_to "Home", root_url %></li>
                 <li><%= link_to "Sign Up", su_path %></li>
                 <li><%= link_to "Log in", li_path %></li>
             <% end %>

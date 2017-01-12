@@ -6,5 +6,7 @@
 * Reposts
 * Highlighting links
 * Mentions
-* Custom error pages
 * Infinite post scroll
+* Mobile compatibility
+* Non-Gravatar Profile Pictures
+* Reimplement image sharing
