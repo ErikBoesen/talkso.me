@@ -1,6 +1,6 @@
 # Talksome
 
-This is the code for a social network that fights filter bubbles.
+One common criticism of social networks in today's media economy is that the algorithms which personalize content tend to curate content that appeals strictly to a user's preferences while neglecting to inform them in a balanced manner about other viewpoints or more important events. Eli Pariser brought attention to this issue in 2011 with his TED talk on "Filter Bubbles," and after the recent election numerous journalists and personalities have decried the ills of echo chambers which protect from opposing views. That's why I created Talksome, a new type of social network which avoids echo chambers and algorithms designed to keep you glued to the screen at the expense of a healthy information diet.
 
 ## Getting started
 
